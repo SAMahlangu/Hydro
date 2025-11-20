@@ -88,14 +88,14 @@ const DroughtPrediction = () => {
       setChartLoading(true);
       
       // Load time series data
-      const timeSeriesResponse = await fetch('http://localhost:5000/drought-timeseries-data');
+      const timeSeriesResponse = await fetch('http://16.171.150.121/drought-timeseries-data');
       if (timeSeriesResponse.ok) {
         const timeSeriesData = await timeSeriesResponse.json();
         setTimeSeriesData(timeSeriesData);
       }
 
       // Load variable data
-      const variableResponse = await fetch('http://localhost:5000/drought-variable-data');
+      const variableResponse = await fetch('http://16.171.150.121/drought-variable-data');
       if (variableResponse.ok) {
         const variableData = await variableResponse.json();
         setVariableData(variableData);
@@ -125,7 +125,7 @@ const DroughtPrediction = () => {
 
     try {
       console.log('Making API call to Flask server for drought prediction...');
-      const response = await fetch('http://localhost:5000/predict-drought', {
+      const response = await fetch('http://16.171.150.121/predict-drought', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
