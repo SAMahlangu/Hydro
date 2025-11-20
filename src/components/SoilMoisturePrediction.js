@@ -40,7 +40,7 @@ const SoilMoisturePrediction = () => {
 
   const fetchModels = async () => {
     try {
-      const res = await fetch('http://localhost:5000/soil-moisture/models');
+      const res = await fetch('http://16.171.150.121/soil-moisture/models');
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to load soil moisture models');
       setModels(data.models || []);
@@ -54,7 +54,7 @@ const SoilMoisturePrediction = () => {
 
   const fetchInitialPrediction = async () => {
     try {
-      const res = await fetch('http://localhost:5000/soil-moisture/predict', {
+      const res = await fetch('http://16.171.150.121/soil-moisture/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -80,7 +80,7 @@ const SoilMoisturePrediction = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('http://localhost:5000/soil-moisture/predict', {
+      const res = await fetch('http://16.171.150.121/soil-moisture/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
