@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 const CitizenReport = () => {
   const [models, setModels] = useState([]);
-  const [defaultModel, setDefaultModel] = useState('');
+  const [, setDefaultModel] = useState('');
+
   const [form, setForm] = useState({
     model_name: '',
     report_text: ''
