@@ -25,7 +25,8 @@ const WeeklyWaterDemand = () => {
   const [models, setModels] = useState([]);
 
   // FIXED — correct state format
-  const [defaultModel, setDefaultModel] = useState('');
+  const [, setDefaultModel] = useState('');
+
 
   const [form, setForm] = useState({
     model_name: '',
