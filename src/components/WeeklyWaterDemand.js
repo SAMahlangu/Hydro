@@ -23,7 +23,7 @@ ChartJS.register(
 
 const WeeklyWaterDemand = () => {
   const [models, setModels] = useState([]);
-  const [defaultModel, setDefaultModel] = useState('');
+  const [setDefaultModel] = useState('');
   const [form, setForm] = useState({
     model_name: '',
     day_of_week: new Date().getDay() === 0 ? 6 : new Date().getDay() - 1, // 0=Mon,6=Sun
