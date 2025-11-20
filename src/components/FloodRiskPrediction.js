@@ -74,7 +74,7 @@ const FloodRiskPrediction = () => {
     try {
       console.log('Loading chart data...');
       setChartLoading(true);
-      const response = await fetch('http://localhost:5000/flood-chart-data');
+      const response = await fetch('http://16.171.150.121/flood-chart-data');
       console.log('Chart data response status:', response.status);
       if (response.ok) {
         const data = await response.json();
@@ -108,7 +108,7 @@ const FloodRiskPrediction = () => {
 
     try {
       console.log('Making API call to Flask server for flood prediction...');
-      const response = await fetch('http://localhost:5000/predict-flood', {
+      const response = await fetch('http://16.171.150.121/predict-flood', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
