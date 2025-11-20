@@ -40,7 +40,7 @@ const RainfallPrediction = () => {
 
   const loadFeatures = async () => {
     try {
-      const res = await fetch('http://localhost:5000/rainfall/features');
+      const res = await fetch('http://16.171.150.121/rainfall/features');
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to load features');
       setFeatures(data.features || []);
@@ -58,7 +58,7 @@ const RainfallPrediction = () => {
   const loadGraphs = async () => {
     setGraphsLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/rainfall/graphs');
+      const res = await fetch('http://16.171.150.121/rainfall/graphs');
       const data = await res.json();
       setGraphs(res.ok ? data : null);
     } catch (e) {
@@ -88,7 +88,7 @@ const RainfallPrediction = () => {
     setError(null);
     setPrediction(null);
     try {
-      const res = await fetch('http://localhost:5000/rainfall/predict', {
+      const res = await fetch('http://16.171.150.121/rainfall/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
