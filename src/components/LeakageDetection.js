@@ -60,7 +60,7 @@ const LeakageDetection = () => {
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const res = await fetch('http://localhost:5000/leakage/models');
+        const res = await fetch('http://16.171.150.121/leakage/models');
         const data = await res.json();
         setModels(data.models || []);
         setForm(prev => ({
@@ -77,7 +77,7 @@ const LeakageDetection = () => {
 
   const loadSummary = async () => {
     try {
-      const res = await fetch('http://localhost:5000/leakage/summary');
+      const res = await fetch('http://16.171.150.121/leakage/summary');
       const data = await res.json();
       setSummary(data);
     } catch (e) {
@@ -102,7 +102,7 @@ const LeakageDetection = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('http://localhost:5000/leakage/predict', {
+      const res = await fetch('http://16.171.150.121/leakage/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
