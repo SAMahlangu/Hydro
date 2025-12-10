@@ -16,7 +16,7 @@ const CitizenReport = () => {
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const res = await fetch('http://16.171.150.121/citizen-report/models');
+        const res = await fetch('http://16.171.142.225/citizen-report/models');
         const data = await res.json();
         const modelNames = data.models || [];
         
@@ -47,7 +47,7 @@ const CitizenReport = () => {
     setLoadingRandom(true);
     setError(null);
     try {
-      const res = await fetch('http://16.171.150.121/citizen-report/random');
+      const res = await fetch('http://16.171.142.225/citizen-report/random');
       const data = await res.json();
 
       if (!res.ok) throw new Error(data.error || 'Failed to get random report');
@@ -79,7 +79,7 @@ const CitizenReport = () => {
     setResult(null);
 
     try {
-      const res = await fetch('http://16.171.150.121/citizen-report/predict', {
+      const res = await fetch('http://16.171.142.225/citizen-report/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
