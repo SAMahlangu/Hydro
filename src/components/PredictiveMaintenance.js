@@ -38,7 +38,7 @@ const PredictiveMaintenance = () => {
 
   const loadFeatures = async () => {
     try {
-      const res = await fetch('http://16.171.150.121/predictive-maintenance/features');
+      const res = await fetch('http://16.171.142.225/predictive-maintenance/features');
       const data = await res.json();
       if (res.ok && data.features) {
         setFeatures(data.features);
@@ -57,7 +57,7 @@ const PredictiveMaintenance = () => {
   const loadGraphs = async () => {
     setGraphsLoading(true);
     try {
-      const res = await fetch('http://16.171.150.121/predictive-maintenance/graphs');
+      const res = await fetch('http://16.171.142.225/predictive-maintenance/graphs');
       const data = await res.json();
       setGraphs(res.ok ? data : null);
     } catch (e) {
@@ -86,7 +86,7 @@ const PredictiveMaintenance = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('http://16.171.150.121/predictive-maintenance/predict', {
+      const res = await fetch('http://16.171.142.225/predictive-maintenance/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
