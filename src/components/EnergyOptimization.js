@@ -30,7 +30,7 @@ const EnergyOptimization = () => {
     setLoadingRandom(true);
     setError(null);
     try {
-      const res = await fetch('http://16.171.150.121/energy-optimization/random');
+      const res = await fetch('http://16.171.142.225/energy-optimization/random');
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to get random inputs');
       setForm(data);
@@ -54,7 +54,7 @@ const EnergyOptimization = () => {
     setResult(null);
 
     try {
-      const res = await fetch('http://16.171.150.121/energy-optimization/predict', {
+      const res = await fetch('http://16.171.142.225/energy-optimization/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
