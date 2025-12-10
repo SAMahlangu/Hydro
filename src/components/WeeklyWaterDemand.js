@@ -45,7 +45,7 @@ const WeeklyWaterDemand = () => {
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const res = await fetch('http://16.171.150.121/weekly-demand/models');
+        const res = await fetch('http://16.171.142.225/weekly-demand/models');
         const data = await res.json();
         const names = data.models || [];
 
@@ -74,7 +74,7 @@ const WeeklyWaterDemand = () => {
     setError(null);
 
     try {
-      const res = await fetch('http://16.171.150.121/weekly-demand/predict', {
+      const res = await fetch('http://16.171.142.225/weekly-demand/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -102,7 +102,7 @@ const WeeklyWaterDemand = () => {
   const loadLines = async () => {
     setLinesLoading(true);
     try {
-      const res = await fetch('http://16.171.150.121/weekly-demand/graphs');
+      const res = await fetch('http://16.171.142.225/weekly-demand/graphs');
       const data = await res.json();
       setLines(res.ok ? data : null);
     } catch (e) {
