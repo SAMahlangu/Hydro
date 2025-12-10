@@ -47,7 +47,7 @@ const AlgaeBloom = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('http://16.171.150.121/algae/predict', {
+      const res = await fetch('http://16.171.142.225/algae/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
@@ -66,7 +66,7 @@ const AlgaeBloom = () => {
   const loadGraphs = async () => {
     setGraphsLoading(true);
     try {
-      const res = await fetch('http://16.171.150.121/algae/graphs');
+      const res = await fetch('http://16.171.142.225/algae/graphs');
       const data = await res.json();
       setGraphs(res.ok ? data : null);
     } catch (e) {
