@@ -43,7 +43,7 @@ const BillingForecast = () => {
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const res = await fetch('http://16.171.150.121/billing-forecast/models');
+        const res = await fetch('http://16.171.142.225/billing-forecast/models');
         const data = await res.json();
         const names = data.models || [];
         setModels(names);
@@ -65,7 +65,7 @@ const BillingForecast = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('http://16.171.150.121/billing-forecast/predict', {
+      const res = await fetch('http://16.171.142.225/billing-forecast/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
@@ -84,7 +84,7 @@ const BillingForecast = () => {
   const loadGraphs = async () => {
     setGraphsLoading(true);
     try {
-      const res = await fetch('http://16.171.150.121/billing-forecast/graphs');
+      const res = await fetch('http://16.171.142.225/billing-forecast/graphs');
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to load graphs');
       setGraphs(data);
