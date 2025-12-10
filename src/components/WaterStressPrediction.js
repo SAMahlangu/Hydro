@@ -69,7 +69,7 @@ const WaterStressPrediction = () => {
 
     try {
       console.log('Making API call to Flask server for water stress prediction...');
-      const response = await fetch('http://16.171.150.121/predict-water-stress', {
+      const response = await fetch('http://16.171.142.225/predict-water-stress', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ const WaterStressPrediction = () => {
   const loadGraphs = async () => {
     setGraphsLoading(true);
     try {
-      const res = await fetch('http://16.171.150.121/water-stress/graphs');
+      const res = await fetch('http://16.171.142.225/water-stress/graphs');
       const data = await res.json();
       setGraphs(res.ok ? data : null);
     } catch (e) {
