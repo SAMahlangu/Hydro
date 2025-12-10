@@ -46,7 +46,7 @@ const WeatherPrediction = () => {
     try {
       console.log('Loading weather chart data...');
       setChartLoading(true);
-      const response = await fetch('http://16.171.150.121/weather-chart-data');
+      const response = await fetch('http://16.171.142.225/weather-chart-data');
       console.log('Weather chart data response status:', response.status);
       if (response.ok) {
         const data = await response.json();
@@ -80,7 +80,7 @@ const WeatherPrediction = () => {
       console.log('Submitting weather prediction request:', formData);
       setApiStatus('Processing...');
       
-      const response = await fetch('http://16.171.150.121/predict-weather', {
+      const response = await fetch('http://16.171.142.225/predict-weather', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
