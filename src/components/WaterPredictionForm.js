@@ -37,7 +37,7 @@ const WaterPredictionForm = () => {
 
     try {
       console.log('Making API call to Flask server...');
-      const response = await fetch('http://16.171.150.121/predict', {
+      const response = await fetch('http://16.171.142.225/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
